@@ -14,7 +14,7 @@ const classesConfig = [
           {
             name: 'Uppercut',
             description: 'Delivers a sharp upward strike that interrupts your opponent’s momentum, dealing extra damage while leaving them off-balance.',
-            icon: 'src/assets/spell18.png',
+            icon: 'assets/spell18.png',
             fields: [
               { name: "Cooldown", value: l => (4 - l) + " second(s)", color: 'silver' },
               { name: "Global cooldown", value: l => "1 second", color: 'silver' },
@@ -25,7 +25,7 @@ const classesConfig = [
           {
               name: 'Kick',
               description: 'Sweeps the target off their feet, forcing them to the ground and leaving them temporarily unable to act.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Duration', value: l => l * 2 + " seconds", color: 'silver' },
                 { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
@@ -36,7 +36,7 @@ const classesConfig = [
           {
               name: 'Rapid Jabs',
               description: 'A flurry of quick strikes in succession.',
-              icon: 'src/assets/spell2.png',
+              icon: 'assets/spell2.png',
               fields: [
                 { name: 'Cooldown', value: l => "5 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 second", color: 'silver' },
@@ -49,7 +49,7 @@ const classesConfig = [
           {
               name: 'Suplex',
               description: 'Grabs the opponent and slams them to the ground, closing the distance instantly and leaving them briefly incapacitated.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 second", color: 'silver' },
@@ -61,7 +61,7 @@ const classesConfig = [
           {
               name: 'Frenzy',
               description: 'Builds momentum with each attack, increasing your damage for a short period or until a set number of strikes land.',
-              icon: 'src/assets/spell4.png',
+              icon: 'assets/spell4.png',
               fields: [
                 { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
@@ -73,7 +73,7 @@ const classesConfig = [
           {
               name: 'Gut Punch',
               description: 'A devastating blow to the midsection, delivering high damage.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Cooldown', value: l => "5 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
@@ -88,7 +88,7 @@ const classesConfig = [
           {
               name: 'Dodge',
               description: 'Leaps backward to evade close-range attacks, quickly putting distance between you and your opponent.',
-              icon: 'src/assets/spell9.png',
+              icon: 'assets/spell9.png',
               fields: [
                 { name: 'Cooldown', value: l => (13 - l * 3) + " seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
@@ -98,7 +98,7 @@ const classesConfig = [
           {
               name: 'Feint',
               description: 'Assumes a stance of anticipating an incoming attack, dodging it in the last moment. If the attack is a melee attack, the feint additionally causes the opponent to trip.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Cooldown', value: l => (12 - l * 2) + " seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "1 seconds", color: 'silver' },
@@ -112,7 +112,7 @@ const classesConfig = [
           {
               name: 'Sprint',
               description: 'Bursts forward with increased speed, allowing you to close gaps or escape threats for a short time.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Cooldown', value: l => "10 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "1 seconds", color: 'silver' },
@@ -123,7 +123,7 @@ const classesConfig = [
           {
               name: 'Medidate',
               description: 'Settles into a controlled rest to restore health. You are immobile and vulnerable while focusing on recovery.',
-              icon: 'src/assets/spell6.png',
+              icon: 'assets/spell6.png',
               fields: [
                 { name: 'Cooldown', value: l => "10 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
@@ -135,7 +135,7 @@ const classesConfig = [
           {
               name: 'Awareness',
               description: 'Sharpens all senses in order to become extremely aware of your surroundings, sensing the presence of enemies in the surrounding area, even if they are behind walls.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Cooldown', value: l => "10 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
@@ -147,7 +147,7 @@ const classesConfig = [
           {
               name: 'Ground Impact',
               description: 'Delivers a powerful strike to the ground, stunning all nearby opponents in the impact zone.',
-              icon: 'src/assets/summit.png',
+              icon: 'assets/summit.png',
               fields: [
                 { name: 'Cooldown', value: l => "7 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
@@ -159,8 +159,20 @@ const classesConfig = [
         ]
       },
       {
-        name: 'Instinct',
+        name: 'Breaker',
         skills: [
+//           {
+//               name: 'Iron Grip',
+//               description: 'Locks both players in a grapple. Both become inacationable. The opponent can break free faster by mashing movement keys.',
+//               icon: 'assets/summit.png',
+//               fields: [
+//                 { name: 'Cooldown', value: l => "7 seconds", color: 'silver' },
+//                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+//                 { name: 'Duration', value: l => "2 seconds", color: 'silver' },
+//                 { name: "Area of effect", value: l => l * 2 + " meters", color: '#00aaff' },
+//                 { name: "All opponents in the area become incapacitated for the entire duration", color: '#00aaff' },
+//               ]
+//           },
         ]
       }
     ]
