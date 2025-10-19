@@ -168,7 +168,7 @@ export default function SkillTrainer() {
                                                     onMouseEnter={e =>
                                                         setTooltip({
                                                             skill,
-                                                            level: Math.max(1, level),
+                                                            level: Math.max(0, level),
                                                             x: e.clientX,
                                                             y: e.clientY
                                                         })
