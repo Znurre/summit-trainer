@@ -168,7 +168,8 @@ export default function SkillTrainer() {
                                                     onMouseEnter={e =>
                                                         setTooltip({
                                                             skill,
-                                                            level: Math.max(0, level),
+                                                            level: Math.max(1, level),
+                                                            actual_level: level,
                                                             x: e.clientX,
                                                             y: e.clientY
                                                         })
@@ -275,7 +276,7 @@ export default function SkillTrainer() {
                     </div>
 
                     <div className="mt-3 pt-3 border-t border-gray-700/50 text-xs text-gray-500 text-center">
-                        Level {tooltip.level} / {MAX_SKILL_LEVEL}
+                        Level {tooltip.actual_level} / {MAX_SKILL_LEVEL}
                     </div>
                 </div>
             )}
