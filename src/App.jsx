@@ -166,7 +166,6 @@ export default function SkillTrainer() {
                                                 <div
                                                     className={`relative group ${unlocked ? 'cursor-pointer' : ''}`}
                                                     onMouseEnter={e =>
-                                                        unlocked &&
                                                         setTooltip({
                                                             skill,
                                                             level: Math.max(1, level),
@@ -175,7 +174,6 @@ export default function SkillTrainer() {
                                                         })
                                                     }
                                                     onMouseMove={e =>
-                                                        unlocked &&
                                                         setTooltip(t => (t ? { ...t, x: e.clientX, y: e.clientY } : null))
                                                     }
                                                     onMouseLeave={() => setTooltip(null)}
