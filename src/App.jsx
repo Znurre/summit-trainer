@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Brain } from 'lucide-react';
 import { FALLBACK_ICONS, TOTAL_POINTS, MAX_TREE_POINTS, MAX_SKILL_LEVEL, CONFIG } from './skills';
 // ===================== HELPERS =====================
 const encode = state => btoa(JSON.stringify(state));
@@ -155,7 +156,7 @@ export default function SkillTrainer() {
                                 {/* Skills Grid */}
                                 <div className="grid grid-cols-2 gap-4">
                                     {Object.entries(tree.skills).map(([skillKey, skill], idx) => {
-                                        const Icon = FALLBACK_ICONS[currentClass][skill.name] || Brain;
+                                        const Icon = FALLBACK_ICONS[currentClass]?.[skill.name] ?? Brain;
                                         const level = classState.skills[skillKey] || 0;
                                         const unlocked = idx < treePoints;
 
@@ -251,7 +252,7 @@ export default function SkillTrainer() {
                 >
                     <div className="flex items-start gap-3 mb-3 pb-3 border-b border-gray-700/50">
                         <div className="text-purple-400">
-                            {React.createElement(FALLBACK_ICONS[currentClass][tooltip.skill.name] || Brain, { size: 24 })}
+                            {React.createElement(FALLBACK_ICONS[currentClass]?.[tooltip.skill.name] || Brain, { size: 24 })}
                         </div>
                         <div>
                             <h3 className="text-lg font-bold text-purple-300">{tooltip.skill.name}</h3>
