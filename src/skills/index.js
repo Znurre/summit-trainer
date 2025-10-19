@@ -1,5 +1,8 @@
 import { Swords, Shield, Zap, Flame, Droplet, Wind, Brain, Heart, Eye } from 'lucide-react';
+
 import awakened from './classes/awakened.js';
+import elementalist from './classes/elementalist.js';
+import arbiter from './classes/arbiter.js';
 
 // ===================== CONFIGURATION =====================
 export const TOTAL_POINTS = 24;
@@ -32,4 +35,6 @@ export const FALLBACK_ICONS = {
 
 export const CONFIG = {
     awakened,
+    elementalist,
+    arbiter,
 };
