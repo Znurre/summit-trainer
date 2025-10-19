@@ -494,7 +494,7 @@ function ClassEditor({ classConfig, state, onStateChange }) {
   const updateTree = (treeIdx, newLevel) => {
     if (pointsLeft + classState.treePoints[treeIdx] < newLevel) return;
     const newTreePoints = [...classState.treePoints];
-    newTreePoints[treeIdx] = newLevel;
+    newTreePoints[treeIdx] = Math.min(6, newLevel);
     onStateChange({...state, [classConfig.name]: {...classState, treePoints: newTreePoints}});
   };
 
