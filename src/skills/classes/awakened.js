@@ -185,7 +185,7 @@ export default {
                 levitate: {
                     name: 'Levitate',
                     desc: 'Lifts the target off the ground, making them immune to melee attacks.',
-                    icon: 'levitate.png',
+                    icon: 'taint.png',
                     stats: [
                         { name: 'Cooldown', val: l => '20 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -212,7 +212,7 @@ export default {
                 teleport: {
                     name: 'Teleport',
                     desc: 'Instantly shifts position in the direction of movement.',
-                    icon: 'teleport.png',
+                    icon: 'resurrect.png',
                     stats: [
                         { name: 'Cooldown', val: l => '5 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -224,7 +224,7 @@ export default {
                 dominate: {
                     name: 'Dominate',
                     desc: 'Links your mind with the target, splitting all incoming damage.',
-                    icon: 'dominate.png',
+                    icon: 'spell18.png',
                     stats: [
                         { name: 'Cooldown', val: l => '30 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
