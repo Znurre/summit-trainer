@@ -189,7 +189,7 @@ export default function SkillTrainer() {
                                                     >
                                                         {skill.icon ? (
                                                             <img
-                                                                src={`/assets/${skill.icon}`}
+                                                                src={`assets/${skill.icon}`}
                                                                 alt={skill.name}
                                                                 className="w-9 h-9"
                                                             />
@@ -252,7 +252,7 @@ export default function SkillTrainer() {
                     <div className="flex items-start gap-3 mb-3 pb-3 border-b border-gray-700/50">
                         <div className="text-purple-400">
                             {tooltip.skill.icon && (
-                                <img src={`/assets/${tooltip.skill.icon}`} alt={tooltip.skill.name} className="w-24" />
+                                <img src={`assets/${tooltip.skill.icon}`} alt={tooltip.skill.name} className="w-24" />
                             ) || (React.createElement(FALLBACK_ICONS[currentClass]?.[tooltip.skill.name] || Brain, { size: 24 }))}
                         </div>
                         <div>
