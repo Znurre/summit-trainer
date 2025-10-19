@@ -5,7 +5,7 @@ import * as Tooltip from '@radix-ui/react-tooltip';
 
 // ===================== CONFIG =====================
 const classesConfig = [
-  {
+/*  {
     name: 'Brawler',
     trees: [
       {
@@ -53,7 +53,7 @@ const classesConfig = [
               fields: [
                 { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 second", color: 'silver' },
-                { name: "Range", value: l => 15, color: 'silver' },
+                { name: "Range", value: l => "15 meters", color: 'silver' },
                 { name: "Damage to target", value: l => 2 * l, color: '#00aaff' },
                 { name: "Target becomes incapacitated for", value: l => l + " second(s)", color: '#00aaff' },
               ]
@@ -152,7 +152,7 @@ const classesConfig = [
                 { name: 'Cooldown', value: l => "7 seconds", color: 'silver' },
                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
                 { name: 'Duration', value: l => "2 seconds", color: 'silver' },
-                { name: "Area of effect", value: l => l * 2 + " meters", color: '#00aaff' },
+                { name: "Area of effect", value: l => l * 2 + " meters", color: 'silver' },
                 { name: "All opponents in the area become incapacitated for the entire duration", color: '#00aaff' },
               ]
           },
@@ -161,25 +161,275 @@ const classesConfig = [
       {
         name: 'Breaker',
         skills: [
-//           {
-//               name: 'Iron Grip',
-//               description: 'Locks both players in a grapple. Both become inacationable. The opponent can break free faster by mashing movement keys.',
-//               icon: 'assets/summit.png',
-//               fields: [
-//                 { name: 'Cooldown', value: l => "7 seconds", color: 'silver' },
-//                 { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
-//                 { name: 'Duration', value: l => "2 seconds", color: 'silver' },
-//                 { name: "Area of effect", value: l => l * 2 + " meters", color: '#00aaff' },
-//                 { name: "All opponents in the area become incapacitated for the entire duration", color: '#00aaff' },
-//               ]
-//           },
+          {
+              name: 'Iron Grip',
+              description: 'Locks both players in a grapple. Both become inacationable. The opponent can break free faster by mashing movement keys.',
+              icon: 'assets/summit.png',
+              fields: [
+                { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Duration', value: l => "5 seconds", color: 'silver' },
+                { name: "Required number of inputs to break free", value: l => l * 10, color: '#00aaff' },
+              ]
+          },
         ]
       }
     ]
   },
   { name: 'Operative', trees: [] },
-  { name: 'Cutthroat', trees: [] },
-  { name: 'Awakened', trees: [] }
+  { name: 'Assailant', trees: [] },
+*/
+  {
+    name: 'Awakened',
+    trees: [
+      {
+        name: 'Destruction',
+        skills: [
+          {
+              name: 'Psychic Lance',
+              description: 'Concentrated psychic energy pierces a single target.',
+              icon: 'assets/psychic_lance.png',
+              fields: [
+                { name: 'Cooldown', value: l => "5 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => "15 meters", color: 'silver' },
+                { name: "Damage", value: l => 6 + l * 2, color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Drain',
+              description: 'Draws health from the target and adds it to yours.',
+              icon: 'assets/drain.png',
+              fields: [
+                { name: 'Cooldown', value: l => "15 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => "15 meters", color: 'silver' },
+                { name: "Damage to target", value: l => 2 + l * 4, color: '#00aaff' },
+                { name: "Caster receives all damage dealt as health", color: '#55ff7f' },
+              ]
+          },
+          {
+              name: 'Razor Grid',
+              description: 'Deploys a web of cutting energy around you. Anyone who moves through the area takes continuous damage.',
+              icon: 'assets/razor_grid.png',
+              fields: [
+                { name: 'Cooldown', value: l => "10 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: "Area of effect", value: l => l * 2, color: 'silver' },
+                { name: "Damage", value: l => 1, color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Contaminate',
+              description: "Turns the target's life energy against them, inflicting direct damage equal to a percentage of their current health.",
+              icon: 'assets/contaminate.png',
+              fields: [
+                { name: 'Cooldown', value: l => "5 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => "15 meters", color: 'silver' },
+                { name: "Damage", value: l => l * 10 + "% of target's health", color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Taint',
+              description: "Turn's the opponent's own strikes against themselves for a brief period of time. For the duration, a percentage of any damage they deal is reflected back onto themselves as indirect damage.",
+              icon: 'assets/taint.png',
+              fields: [
+                { name: 'Cooldown', value: l => "10 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => "15 meters", color: 'silver' },
+                { name: 'Duration', value: l => "3 seconds", color: 'silver' },
+                { name: "Damage reflected", value: l => l * 10 + "%", color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Total Destruction',
+              description: "Rises slowly into the air, channeling immense energy for 5 seconds before releasing a devastating blast. Any damage taken while channeling restores your health by draining nearby allies, if any.",
+              icon: 'assets/total_destruction.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "5 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "5 seconds", color: 'silver' },
+                { name: 'Duration', value: l => "3 seconds", color: 'silver' },
+                { name: "Area of effect", value: l => 5 + l * 5 + " meters", color: 'silver' },
+                { name: "Damage", value: l => 100, color: '#00aaff' },
+                { name: "Caster is immune to debuffs or negative effects", color: '#55ff7f' },
+                { name: "Damage received is distributed amongst allies inside the area of effect", color: '#55ff7f' },
+              ]
+          },
+        ]
+      },
+      {
+        name: 'Restoration',
+        skills: [
+          {
+              name: 'Healing Touch',
+              description: 'Transfers restorative energy to the target, or to yourself if no target is selected.',
+              icon: 'assets/healing_touch.png',
+              fields: [
+                { name: 'Cooldown', value: l => "5 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => "15 meters", color: 'silver' },
+                { name: "Health restored to target", value: l => l * 10, color: '#55ff7f' },
+              ]
+          },
+          {
+              name: 'Absorb',
+              description: 'Adopts a defensive stance that converts all incoming damage into health. Cannot attack while active.',
+              icon: 'assets/absorb.png',
+              fields: [
+                { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: "Duration", value: l => "5 seconds", color: 'silver' },
+                { name: "Number of attacks absorbed", value: l => l, color: '#55ff7f' },
+                { name: "Caster cannot attack or use skills for the duration", color: '#ff557f' },
+              ]
+          },
+          {
+              name: 'Sacrifice',
+              description: 'Sacrifices a portion of your own health in order to partially restore the health of the target.',
+              icon: 'assets/sacrifice.png',
+              fields: [
+                { name: 'Cooldown', value: l => "10 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: "Range", value: l => "15 meters", color: 'silver' },
+                { name: "Caster loses health", value: l => 10 + l * 10, color: '#ff557f' },
+                { name: "Target receives health", value: l => 10 + l * 10, color: '#55ff7f' },
+              ]
+          },
+          {
+              name: 'Resurrect',
+              description: "Restores a fallen ally to life..",
+              icon: 'assets/resurrect.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "3 seconds", color: 'silver' },
+                { name: "Target is resurrected", color: '#55ff7f' },
+                { name: "Health restored to target", value: l => (l * 20) - 10, color: '#55ff7f' },
+              ]
+          },
+          {
+              name: 'Change Class',
+              description: "Temporarily forces a random class change onto the target. If no target is selected, applies to yourself.",
+              icon: 'assets/change_class.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => (4 - l) + " second(s)", color: 'silver' },
+                { name: 'Range', value: l => (l * 5) + " meters", color: 'silver' },
+                { name: 'Duration', value: l => (l * 10) + " seconds", color: 'silver' },
+                { name: "Class is changed into a random one for the duration", color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Dispell',
+              description: "Removes all active effects - positive or negative - from the target. If no target is selected, applies to yourself.",
+              icon: 'assets/dispell.png',
+              fields: [
+                { name: 'Cooldown', value: l => 12 - (l * 2) + " seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: "Range", value: l => l * 5 + " meters", color: 'silver' },
+                { name: "Removes all active effects from the target - positive or negative", color: '#00aaff' },
+              ]
+          },
+        ]
+      },
+      {
+        name: 'Mind Control',
+        skills: [
+          {
+              name: 'Hold',
+              description: 'Uses strong mind control techniques to make the opponent unable to move or perform any action. Requires perfect focus, so any attack either on you or the target, as well as you attempting to perform any action (including movement), will cancel this ability.',
+              icon: 'assets/hold.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => l * 5 + " meters", color: 'silver' },
+                { name: 'Duration', value: l => (l * 2) + " seconds", color: 'silver' },
+                { name: "Target becomes inactionable", color: '#00aaff' },
+                { name: "Caster becomes inactionable", color: '#ff557f' },
+                { name: "Cancels on any action, including movement", color: '#ff557f' },
+              ]
+          },
+          {
+              name: 'Levitate',
+              description: 'Lifts the target a short distance off the ground. They become unreachable to melee attackers but are also unable to perform melee actions. If no target is selected, applies to yourself.',
+              icon: 'assets/summit.png',
+              fields: [
+                { name: 'Cooldown', value: l => "20 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => (l * 5) + " meters", color: 'silver' },
+                { name: "Duration", value: l => 2 + l + " seconds", color: '#00aaff' },
+                { name: "Target is lifted off the ground, becoming immune to and unable to perform melee attacks", color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Clone',
+              description: 'Creates a mirrored duplicate of the target, or yourself no active target. The clone mimics every action, doubling both damage output and damage received. All health is shared between the two.',
+              icon: 'assets/clone.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: "Range", value: l => l * 5 + " meters", color: 'silver' },
+                { name: "Duration", value: l => 2 * l + " seconds", color: 'silver' },
+                { name: "Target is cloned. The clone mimics every action. Health as well as damage received is shared.", value: l => 2 * l + " seconds", color: '#00aaff' },
+              ]
+          },
+          {
+              name: 'Teleport',
+              description: "Instantly shifts position in the direction of current movement. If stationary, blinks in place. All attackers lose their target when the teleport occurs.",
+              icon: 'assets/summit.png',
+              fields: [
+                { name: 'Cooldown', value: l => "5 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: "Distance", value: l => l * 2 + " meters", color: 'silver' },
+                { name: "The caster teleports in the direction of current movement, or in place if stationary", color: '#55ff7f' },
+                { name: "Opponent loses the caster as their active target", color: '#55ff7f' },
+              ]
+          },
+          {
+              name: 'Dominate',
+              description: "Links your mind and body with the target's, splitting all incoming damage evenly between both parties.",
+              icon: 'assets/summit.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => "1 second", color: 'silver' },
+                { name: 'Range', value: l => "15 meters", color: 'silver' },
+                { name: 'Duration', value: l => (l * 2) + " seconds", color: 'silver' },
+                { name: "50% of all caster damage received reflected to target", color: '#55ff7f' },
+                { name: "50% of all target damage received reflected to caster", color: '#ff557f' },
+              ]
+          },
+          {
+              name: 'Extract',
+              description: "Forces the target to drop their active class power-up. If no target is selected, applies to yourself.",
+              icon: 'assets/extract.png',
+              fields: [
+                { name: 'Cooldown', value: l => "30 seconds", color: 'silver' },
+                { name: 'Global cooldown', value: l => "2 seconds", color: 'silver' },
+                { name: 'Cast time', value: l => (6 - l) + " seconds", color: 'silver' },
+                { name: "Range", value: l => l * 5 + " meters", color: 'silver' },
+                { name: "The target's active class power-up is extracted and dropped to the ground", color: '#00aaff' },
+              ]
+          },
+        ]
+      }
+    ]
+  }
 ];
 
 // ===================== HELPERS =====================
@@ -194,10 +444,9 @@ function Skill({ skill, level, onChange, locked }) {
         <Tooltip.Trigger asChild>
           <button
             disabled={locked}
-            className={`p-4 m-2 border rounded ${level < 1 || locked ? 'opacity-30' : 'opacity-100'}`}
-            onClick={() => onChange(level + 1)}
+            className={`p-4 m-2 border rounded ${locked ? 'opacity-30' : level < 1 ? 'opacity-70' : 'opacity-100'}`}
           >
-            <img src={skill.icon} width='32' height='32' /> {level}
+            <img src={skill.icon} width='32' height='32' /> <button onClick={() => onChange(level - 1)}>-</button> {level} <button onClick={() => onChange(level + 1)}>+</button>
           </button>
         </Tooltip.Trigger>
 
@@ -240,7 +489,7 @@ function ClassEditor({ classConfig, state, onStateChange }) {
   const classState = state[classConfig.name] || { treePoints: Array(classConfig.trees.length).fill(0), skillPoints: classConfig.trees.map(t => Array(t.skills.length).fill(0)) };
 
   const totalPointsUsed = classState.treePoints.reduce((a,b)=>a+b,0) + classState.skillPoints.flat().reduce((a,b)=>a+b,0);
-  const pointsLeft = 18 - totalPointsUsed;
+  const pointsLeft = 24 - totalPointsUsed;
 
   const updateTree = (treeIdx, newLevel) => {
     if (pointsLeft + classState.treePoints[treeIdx] < newLevel) return;
@@ -252,7 +501,7 @@ function ClassEditor({ classConfig, state, onStateChange }) {
   const updateSkill = (treeIdx, skillIdx, newLevel) => {
     if (pointsLeft + classState.skillPoints[treeIdx][skillIdx] < newLevel) return;
     const newSkillPoints = classState.skillPoints.map((arr,i)=>i===treeIdx? [...arr]: [...arr]);
-    newSkillPoints[treeIdx][skillIdx] = newLevel;
+    newSkillPoints[treeIdx][skillIdx] = Math.min(3, Math.max(0, newLevel));
     onStateChange({...state, [classConfig.name]: {...classState, skillPoints: newSkillPoints}});
   };
 
