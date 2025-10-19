@@ -118,7 +118,7 @@ export default function SkillTrainer() {
                 </div>
 
                 {/* Skill Trees */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="flex flex-col gap-6">
                     {Object.entries(CONFIG[currentClass].trees).map(([treeKey, tree]) => {
                         const treePoints = classState.trees[treeKey] || 0;
 
@@ -154,7 +154,7 @@ export default function SkillTrainer() {
                                 </div>
 
                                 {/* Skills Grid */}
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="flex flex-wrap gap-4">
                                     {Object.entries(tree.skills).map(([skillKey, skill], idx) => {
                                         const Icon = FALLBACK_ICONS[currentClass]?.[skill.name] ?? Brain;
                                         const level = classState.skills[skillKey] || 0;
