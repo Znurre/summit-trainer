@@ -118,7 +118,7 @@ export default function SkillTrainer() {
                 </div>
 
                 {/* Skill Trees */}
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col items-center gap-6">
                     {Object.entries(CONFIG[currentClass].trees).map(([treeKey, tree]) => {
                         const treePoints = classState.trees[treeKey] || 0;
 
