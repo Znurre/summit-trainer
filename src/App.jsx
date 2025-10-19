@@ -470,10 +470,18 @@ export default function SkillTrainer() {
                                                             : 'border-gray-800 bg-gray-900/30 opacity-30'
                                                             }`}
                                                     >
-                                                        <Icon
-                                                            size={36}
-                                                            className={unlocked ? 'text-purple-300' : 'text-gray-700'}
-                                                        />
+                                                        {skill.icon ? (
+                                                            <img
+                                                                src={`/assets/${skill.icon}`}
+                                                                alt={skill.name}
+                                                                className="w-9 h-9"
+                                                            />
+                                                        ) : (
+                                                            <Icon
+                                                                size={36}
+                                                                className={unlocked ? 'text-purple-300' : 'text-gray-700'}
+                                                            />
+                                                        )}
                                                     </div>
 
                                                     {/* Level Badge */}
