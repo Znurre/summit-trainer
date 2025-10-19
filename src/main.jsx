@@ -231,7 +231,7 @@ const classesConfig = [
                 { name: 'Global cooldown', value: l => "1 second", color: 'silver' },
                 { name: 'Cast time', value: l => "1 second", color: 'silver' },
                 { name: 'Range', value: l => "15 meters", color: 'silver' },
-                { name: "Damage", value: l => l * 10 + "% of target's health", color: '#00aaff' },
+                { name: "Damage", value: l => 5 + (l * 5) + "% of target's health", color: '#00aaff' },
               ]
           },
           {
