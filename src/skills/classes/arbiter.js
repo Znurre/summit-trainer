@@ -8,7 +8,7 @@ export default {
                 shieldSlam: {
                     name: 'Shield Slam',
                     desc: 'Bashes the enemy with a heavy shield, dealing damage and briefly stunning them.',
-                    icon: 'shield_slam.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '6 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -21,7 +21,7 @@ export default {
                 bulwark: {
                     name: 'Bulwark',
                     desc: 'Assumes a defensive stance that reduces incoming damage for a short time.',
-                    icon: 'bulwark.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '20 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -33,7 +33,7 @@ export default {
                 fortify: {
                     name: 'Fortify',
                     desc: 'Generates a personal shield that absorbs damage. Excess absorb returns as a small heal.',
-                    icon: 'fortify.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '30 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -46,7 +46,7 @@ export default {
                 righteousBarrier: {
                     name: 'Righteous Barrier',
                     desc: 'Erects a barrier around allies in a small area, granting shields and minor cleansing.',
-                    icon: 'righteous_barrier.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '25 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -60,7 +60,7 @@ export default {
                 taunt: {
                     name: 'Taunt',
                     desc: 'Provokes a single enemy, forcing them to target you and reducing their defenses briefly.',
-                    icon: 'taunt.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '12 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -73,7 +73,7 @@ export default {
                 bastion: {
                     name: 'Bastion',
                     desc: 'Creates a protective dome around you that heavily reduces incoming damage and reflects a portion back to attackers.',
-                    icon: 'bastion.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '60 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '3 seconds', color: '#9ca3af' },
@@ -92,7 +92,7 @@ export default {
                 verdictStrike: {
                     name: 'Verdict Strike',
                     desc: 'Channels divine focus into a single decisive strike.',
-                    icon: 'verdict_strike.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '5 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -104,7 +104,7 @@ export default {
                 purge: {
                     name: 'Purge',
                     desc: 'Strips beneficial effects from a target and deals holy damage.',
-                    icon: 'purge.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '15 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -117,7 +117,7 @@ export default {
                 condemn: {
                     name: 'Condemn',
                     desc: 'Calls down a pillar of judgement that damages and weakens enemies within the area.',
-                    icon: 'condemn.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '18 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -130,7 +130,7 @@ export default {
                 chainJudgement: {
                     name: 'Chain Judgement',
                     desc: 'Sends a wave of judgement that chains between multiple enemies, dealing reduced damage each jump.',
-                    icon: 'chain_judgement.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '20 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -143,7 +143,7 @@ export default {
                 unwaveringWill: {
                     name: 'Unwavering Will',
                     desc: 'Bolsters resolve, increasing critical chance and granting a burst of mana regeneration.',
-                    icon: 'unwavering_will.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '30 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -156,7 +156,7 @@ export default {
                 execution: {
                     name: 'Execution',
                     desc: 'Channels a focused strike that deals massive damage; instant kill chance against low-health foes.',
-                    icon: 'execution.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '40 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '3 seconds', color: '#9ca3af' },
@@ -174,7 +174,7 @@ export default {
                 banish: {
                     name: 'Banish',
                     desc: 'Forces a non-boss enemy out of the battlefield temporarily, removing them from combat.',
-                    icon: 'banish.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '25 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -187,7 +187,7 @@ export default {
                 seizeControl: {
                     name: 'Seize Control',
                     desc: 'Temporarily dominates an enemy, forcing them to fight for you.',
-                    icon: 'seize_control.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '30 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -200,7 +200,7 @@ export default {
                 runeOfOrder: {
                     name: 'Rune of Order',
                     desc: 'Places a rune that channels order: slows foes and buffs allies who stand within it.',
-                    icon: 'rune_of_order.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '20 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -214,7 +214,7 @@ export default {
                 temporalAnchor: {
                     name: 'Temporal Anchor',
                     desc: 'Anchors time around a zone, drastically reducing enemy action speed and cooldown recovery.',
-                    icon: 'temporal_anchor.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '35 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '2 seconds', color: '#9ca3af' },
@@ -228,7 +228,7 @@ export default {
                 chainbind: {
                     name: 'Chainbind',
                     desc: 'Launches spectral chains that root and damage enemies in a line.',
-                    icon: 'chainbind.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '12 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '1 second', color: '#9ca3af' },
@@ -241,7 +241,7 @@ export default {
                 dominionAscend: {
                     name: 'Dominion Ascend',
                     desc: 'Ascends to a commanding presence, empowering allies and imposing heavy penalties on enemies.',
-                    icon: 'dominion_ascend.png',
+                    icon: undefined,
                     stats: [
                         { name: 'Cooldown', val: l => '90 seconds', color: '#9ca3af' },
                         { name: 'Global cooldown', val: l => '5 seconds', color: '#9ca3af' },
