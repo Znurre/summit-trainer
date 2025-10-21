@@ -59,9 +59,15 @@ export default function SkillTrainer() {
         const tree = CONFIG[currentClass].trees[treeKey];
         const skillIndex = Object.keys(tree.skills).indexOf(skillKey);
 
-        if (skillIndex >= treeLevel) return;
-
         const current = cs.skills[skillKey] || 0;
+
+        if (skillIndex >= treeLevel && current < 1) {
+            // only allow changing skills that are unlocked
+            // or those which already have points invested
+
+            return;
+        }
+
         const next = Math.max(0, Math.min(MAX_SKILL_LEVEL, current + delta));
 
         if (delta > 0 && getTotalPoints() >= TOTAL_POINTS) return;
@@ -158,7 +164,8 @@ export default function SkillTrainer() {
                                     {Object.entries(tree.skills).map(([skillKey, skill], idx) => {
                                         const Icon = FALLBACK_ICONS[currentClass]?.[skill.name] ?? Brain;
                                         const level = classState.skills[skillKey] || 0;
-                                        const unlocked = idx < treePoints;
+                                        const unlocked = idx < treePoints || level > 0;
+                                        const usable = idx < treePoints;
 
                                         return (
                                             <div key={skillKey} className="flex flex-col items-center gap-2">
@@ -180,7 +187,7 @@ export default function SkillTrainer() {
                                                     onMouseLeave={() => setTooltip(null)}
                                                 >
                                                     <div
-                                                        className={`w-20 h-20 rounded-xl flex items-center justify-center transition-all border-2 ${unlocked
+                                                        className={`w-20 h-20 rounded-xl flex items-center justify-center transition-all border-2 ${usable
                                                             ? level > 0
                                                                 ? 'border-purple-500 bg-gradient-to-br from-purple-600/20 to-pink-600/20 shadow-lg shadow-purple-500/30'
                                                                 : 'border-gray-600 bg-gray-700/30 hover:bg-gray-600/40'
@@ -196,14 +203,16 @@ export default function SkillTrainer() {
                                                         ) : (
                                                             <Icon
                                                                 size={36}
-                                                                className={unlocked ? 'text-purple-300' : 'text-gray-700'}
+                                                                className={usable ? 'text-purple-300' : 'text-gray-700'}
                                                             />
                                                         )}
                                                     </div>
 
                                                     {/* Level Badge */}
                                                     {level > 0 && (
-                                                        <div className="absolute -bottom-2 -right-2 w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                                                        <div className={`
+                                                        absolute -bottom-2 -right-2 w-7 h-7 bg-gradient-to-br ${usable ? "from-blue-500 to-purple-600" : "from-gray-500 to-black-600"} rounded-full flex items-center justify-center text-xs font-bold shadow-lg
+                                                        `}>
                                                             {level}
                                                         </div>
                                                     )}
@@ -221,7 +230,7 @@ export default function SkillTrainer() {
                                                         </button>
                                                         <button
                                                             onClick={() => updateSkill(treeKey, skillKey, 1)}
-                                                            disabled={level >= MAX_SKILL_LEVEL || pointsLeft === 0}
+                                                            disabled={level >= MAX_SKILL_LEVEL || pointsLeft === 0 || !usable}
                                                             className="w-7 h-7 rounded-lg bg-green-600/80 hover:bg-green-500 disabled:bg-gray-700 disabled:cursor-not-allowed transition-all text-sm font-bold"
                                                         >
                                                             +
